@@ -44,7 +44,6 @@ class ProductsController < ApplicationController
   def add_to_cart
     @product = Product.find(params[:id])
     redirect_to :back
-    flash[:notice] = "testing cart"
   end
 
   private
