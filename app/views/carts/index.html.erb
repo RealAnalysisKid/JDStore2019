@@ -32,7 +32,11 @@
           </td>
           <td><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></td>
           <td><%= cart_item.product.price %></td>
-          <td><%= cart_item.product.quantity %></td>
+          <td>
+            <%= simple_form_for cart_item.quantity do |f|%>
+              <%= f.select {1,2,3,4,5}, default: 1 %>
+            <% end %>
+          </td>
           <td>
             <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
               <i class="fa fa-trash"></i>
