@@ -14,10 +14,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cart_items 
+  resources :cart_items
 
     namespace :admin do
-      resources :products
+      resources :products do
+        member do
+          patch :move_up
+          patch :move_down
+        end
+      end
     end
 
     root 'products#index'
