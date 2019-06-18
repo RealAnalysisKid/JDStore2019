@@ -1,9 +1,7 @@
 class CartsController < ApplicationController
 
   def checkout
-    @cart = current_cart
-    @cart_items = current_cart.cart_items
-    @  
+    @order = Order.new
   end
 
   def clean
