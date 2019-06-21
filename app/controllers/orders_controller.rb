@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
+  def show
+    @order = Order.find(params[:id])
+  end
+
   def create
     @order = Order.new(order_params)
     @order.user = current_user
