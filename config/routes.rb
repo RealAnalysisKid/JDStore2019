@@ -8,10 +8,33 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :carts
+  resources :carts do
+    collection do
+      delete :clean
+      post :checkout
+    end
+  end
+
+  resources :cart_items
 
     namespace :admin do
-      resources :products
+      resources :products do
+        member do
+          patch :move_up
+          patch :move_down
+        end
+      end
+    end
+
+    resources :orders do
+      member do
+        post :pay_with_alipay
+        post :pay_with_wechat
+      end
+    end
+
+    namespace :account do
+      resources :orders
     end
 
     root 'products#index'
