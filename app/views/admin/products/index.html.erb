@@ -31,7 +31,12 @@
       </td>
       <td><%= product.title %></td>
       <td><%= product.price %></td>
-      <td><%= link_to("Edit", edit_admin_product_path(product)) %></td>
+      <td>
+        <%= link_to("Edit", edit_admin_product_path(product)) %>
+        <%= link_to("Up", move_up_admin_product_path(product), method: :patch) %>
+        <%= link_to("down", move_down_admin_product_path(product), method: :patch) %>
+      </td>
+
     </tr>
     <% end %>
   </tbody>
