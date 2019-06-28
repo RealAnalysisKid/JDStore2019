@@ -9,6 +9,7 @@
        <% end %>
       <% end %>
       <%= product.title %> ￥ <%= product.price %>
+      点击量 <%= product.impressionist_count(:filter=>:ip_address) %>
     </div>
   <% end %>
 </div>
