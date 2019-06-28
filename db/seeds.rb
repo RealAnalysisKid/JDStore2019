@@ -41,3 +41,18 @@ Product.create!(title: "故事",
   quantity: 190,
   image: open("https://images-cn.ssl-images-amazon.com/images/I/31rYSVuqX9L.jpg")
 )
+
+Product.create!(title: "生活用品",
+  description: "睡衣",
+  price: 99,
+  quantity: 1,
+  image: File.open("/Users/realanalysis/pictures/Snip20190326_4.png")
+)
+
+
+Product.create!(title: "生活用品",
+  description: "书籍",
+  price: 430,
+  quantity: 300,
+  image: File.open("/Users/realanalysis/pictures/帅.jpeg")
+)
