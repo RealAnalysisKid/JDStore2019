@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  impressionist
   before_action :authenticate_user!
 
   def index
